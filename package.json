@@ -1,0 +1,10 @@
+﻿{
+  "name": "com.vladislavtsurikov.megaworld.brushmodifytool",
+  "version": "1.0.0",
+  "displayName": "VladislavTsurikov.MegaWorld.BrushModifyTool",
+  "unity": "2021.3",
+  "description": "UPM package for VladislavTsurikov MegaWorld BrushModifyTool.",
+  "dependencies": {
+    "com.vladislavtsurikov.megaworld.core": "1.0.0"
+  }
+}
