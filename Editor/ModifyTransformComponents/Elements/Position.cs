@@ -18,14 +18,14 @@ namespace VladislavTsurikov.MegaWorld.Editor.BrushModifyTool.ModifyTransformComp
         public override void ModifyTransform(ref Instance spawnInfo, ref ModifyInfo modifyInfo, float moveLenght,
             Vector3 strokeDirection, float fitness, Vector3 normal)
         {
-            var randomPositionY = modifyInfo.RandomPositionY * (YStrengthRandomize / 100f);
+            float randomPositionY = modifyInfo.RandomPositionY * (YStrengthRandomize / 100f);
 
-            var localStrengthPosition = fitness * moveLenght;
+            float localStrengthPosition = fitness * moveLenght;
 
-            var addPositionY = Strength * localStrengthPosition * 0.05f;
+            float addPositionY = Strength * localStrengthPosition * 0.05f;
             addPositionY = Mathf.Lerp(addPositionY, 0, randomPositionY);
 
-            var position = new Vector3(spawnInfo.Position.x, spawnInfo.Position.y + addPositionY, spawnInfo.Position.z);
+            Vector3 position = new(spawnInfo.Position.x, spawnInfo.Position.y + addPositionY, spawnInfo.Position.z);
 
             spawnInfo.Position = position;
         }

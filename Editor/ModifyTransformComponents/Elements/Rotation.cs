@@ -19,7 +19,7 @@ namespace VladislavTsurikov.MegaWorld.Editor.BrushModifyTool.ModifyTransformComp
         {
             Vector3 modifyRotation = GetModifyRotation(modifyInfo);
 
-            var localStrengthRotation = ModifyStrengthRotation * fitness * moveLenght;
+            float localStrengthRotation = ModifyStrengthRotation * fitness * moveLenght;
 
             Quaternion rotation = spawnInfo.Rotation * Quaternion.Euler(modifyRotation * localStrengthRotation * 0.1f);
 

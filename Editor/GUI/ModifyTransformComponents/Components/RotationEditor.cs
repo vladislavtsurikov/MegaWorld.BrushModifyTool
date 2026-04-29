@@ -13,7 +13,10 @@ namespace VladislavTsurikov.MegaWorld.Editor.BrushModifyTool.GUI.ModifyTransform
     {
         private Rotation _settings;
 
-        public override void OnEnable() => _settings = (Rotation)Target;
+        public override void OnEnable()
+        {
+            _settings = (Rotation)Target;
+        }
 
         public override void OnGUI(Rect rect, int index)
         {
@@ -113,7 +116,7 @@ namespace VladislavTsurikov.MegaWorld.Editor.BrushModifyTool.GUI.ModifyTransform
 
         public override float GetElementHeight(int index)
         {
-            var height = EditorGUIUtility.singleLineHeight;
+            float height = EditorGUIUtility.singleLineHeight;
 
             height += EditorGUIUtility.singleLineHeight;
             height += EditorGUIUtility.singleLineHeight;

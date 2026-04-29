@@ -8,7 +8,10 @@ namespace VladislavTsurikov.MegaWorld.Editor.BrushModifyTool.GUI
     [ElementEditor(typeof(BrushModifyTool))]
     public class BrushModifyToolEditor : ToolWindowEditor
     {
-        public override void DrawButtons() => UndoEditor.DrawButtons(TargetType, WindowData.Instance.SelectedData);
+        public override void DrawButtons()
+        {
+            UndoEditor.DrawButtons(TargetType, WindowData.Instance.SelectedData);
+        }
     }
 }
 #endif

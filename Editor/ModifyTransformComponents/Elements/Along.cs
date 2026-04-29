@@ -10,14 +10,14 @@ namespace VladislavTsurikov.MegaWorld.Editor.BrushModifyTool.ModifyTransformComp
         public override void ModifyTransform(ref Instance instance, ref ModifyInfo modifyInfo, float moveLenght,
             Vector3 strokeDirection, float fitness, Vector3 normal)
         {
-            var upwards = new Vector3(0, 1, 0);
+            Vector3 upwards = new(0, 1, 0);
 
-            var strength = Mathf.InverseLerp(0, 15, moveLenght);
+            float strength = Mathf.InverseLerp(0, 15, moveLenght);
             strength *= fitness;
 
-            var forward = Vector3.Cross(strokeDirection, upwards);
+            Vector3 forward = Vector3.Cross(strokeDirection, upwards);
 
-            var rotation = Quaternion.LookRotation(forward, upwards);
+            Quaternion rotation = Quaternion.LookRotation(forward, upwards);
 
             instance.Rotation = Quaternion.Lerp(instance.Rotation, rotation, strength);
         }

@@ -17,7 +17,9 @@ namespace VladislavTsurikov.MegaWorld.Editor.BrushModifyTool
         public static void Draw(BoxArea area)
         {
             if (area == null || area.RayHit == null)
+            {
                 return;
+            }
 
             if (WindowData.Instance.SelectedData.HasOneSelectedGroup())
             {
@@ -26,7 +28,7 @@ namespace VladislavTsurikov.MegaWorld.Editor.BrushModifyTool
                 if (group.PrototypeType == typeof(PrototypeGameObject) ||
                     group.PrototypeType == typeof(PrototypeTerrainObject))
                 {
-                    var filterSettings =
+                    FilterSettings filterSettings =
                         (FilterSettings)group.GetElement(typeof(BrushModifyTool), typeof(FilterSettings));
 
                     if (filterSettings.FilterType != FilterType.MaskFilter)

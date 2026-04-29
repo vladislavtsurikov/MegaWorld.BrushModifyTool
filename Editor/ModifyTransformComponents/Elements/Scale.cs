@@ -18,11 +18,11 @@ namespace VladislavTsurikov.MegaWorld.Editor.BrushModifyTool.ModifyTransformComp
         public override void ModifyTransform(ref Instance spawnInfo, ref ModifyInfo modifyInfo, float moveLenght,
             Vector3 strokeDirection, float fitness, Vector3 normal)
         {
-            var randomScale = modifyInfo.RandomScale * (StrengthRandomize / 100f);
+            float randomScale = modifyInfo.RandomScale * (StrengthRandomize / 100f);
 
-            var localStrengthScale = fitness * moveLenght;
+            float localStrengthScale = fitness * moveLenght;
 
-            var addScale = Strength * localStrengthScale * 0.005f;
+            float addScale = Strength * localStrengthScale * 0.005f;
             addScale = Mathf.Lerp(addScale, 0, randomScale);
 
             spawnInfo.Scale = new Vector3(spawnInfo.Scale.x + addScale, spawnInfo.Scale.y + addScale,

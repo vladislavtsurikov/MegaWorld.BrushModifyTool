@@ -8,14 +8,14 @@ namespace VladislavTsurikov.MegaWorld.Editor.BrushModifyTool.ModifyTransformComp
     [Name("Randomize Scale")]
     public class RandomizeScale : ModifyTransformComponent
     {
-        public bool UniformScale = true;
+        [HideInInspector]
+        public Vector3 MaxScale = new(1.2f, 1.2f, 1.2f);
 
         [MinMaxSlider(0f, 5f, nameof(MaxScale), UniformToggleFieldName = nameof(UniformScale),
             LabelPreset = MinMaxSliderLabelPreset.ScaleZeroToFive, LabelOverride = "Scale")]
         public Vector3 MinScale = new(0.8f, 0.8f, 0.8f);
 
-        [HideInInspector]
-        public Vector3 MaxScale = new(1.2f, 1.2f, 1.2f);
+        public bool UniformScale = true;
 
         public override void ModifyTransform(ref Instance instance, ref ModifyInfo modifyInfo, float moveLenght,
             Vector3 strokeDirection, float fitness, Vector3 normal)
@@ -23,7 +23,7 @@ namespace VladislavTsurikov.MegaWorld.Editor.BrushModifyTool.ModifyTransformComp
             Vector3 scale;
             if (UniformScale)
             {
-                var resScale = Random.Range(MinScale.x, MaxScale.x);
+                float resScale = Random.Range(MinScale.x, MaxScale.x);
                 scale = new Vector3(resScale, resScale, resScale);
             }
             else

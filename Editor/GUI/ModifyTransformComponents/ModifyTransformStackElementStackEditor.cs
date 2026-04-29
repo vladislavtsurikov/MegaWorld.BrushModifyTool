@@ -19,7 +19,10 @@ namespace VladislavTsurikov.MegaWorld.Editor.BrushModifyTool.GUI.ModifyTransform
                 _settings.ModifyTransformComponentStack);
         }
 
-        public override void OnGUI() => _modifyTransformStackEditor.OnGUI();
+        public override void OnGUI()
+        {
+            _modifyTransformStackEditor.OnGUI();
+        }
     }
 }
 #endif
